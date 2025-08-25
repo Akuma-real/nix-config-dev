@@ -113,8 +113,8 @@
     enable = true;
     settings = {
       X11Forwarding = true;
-      PermitRootLogin = "yes"; # enable root login
-      PasswordAuthentication = yes; # enable password login
+  PermitRootLogin = "yes"; # enable root login
+  PasswordAuthentication = true; # enable password login
     };
     openFirewall = true;
   };
