@@ -113,8 +113,8 @@
     enable = true;
     settings = {
       X11Forwarding = true;
-      PermitRootLogin = "no"; # disable root login
-      PasswordAuthentication = false; # disable password login
+      PermitRootLogin = "yes"; # enable root login
+      PasswordAuthentication = yes; # enable password login
     };
     openFirewall = true;
   };
@@ -126,14 +126,7 @@
     wget
     curl
     git
-    sysstat
-    lm_sensors # for `sensors` command
-    # minimal screen capture tool, used by i3 blur lock to take a screenshot
-    # print screen key is also bound to this tool in i3 config
-    scrot
-    neofetch
-    xfce.thunar # xfce4's file manager
-    nnn # terminal file manager
+    fastfetch
   ];
 
   # Enable sound with pipewire.

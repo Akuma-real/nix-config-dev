@@ -1,22 +1,21 @@
 {pkgs, ...}: {
   ##################################################################################################################
   #
-  # All Suzi's Home Manager Configuration
+  # All Ryan's Home Manager Configuration
   #
   ##################################################################################################################
 
   imports = [
     ../../home/core.nix
 
-    ./fcitx5
-    ./i3
-    ./programs
-    ./rofi
-    ./shell
+    ../../home/fcitx5
+    ../../home/programs
+    ../../home/rofi
+    ../../home/shell
   ];
 
   programs.git = {
-    userName = "Suzi";
-    userEmail = "suzi@writefor.fun";
+    userName = "Akuma-real";
+    userEmail = "admin@june.ink";
   };
 }

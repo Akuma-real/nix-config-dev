@@ -8,7 +8,7 @@
 }: {
   imports = [
     ../../modules/system.nix
-    ../../modules/i3.nix
+    ../../modules/kde.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -20,16 +20,11 @@
     #   canTouchEfiVariables = true;
     #   efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
     # };
-    grub = {
-      enable = true;
-      device = "/dev/sda"; #  "nodev"
-      efiSupport = false;
-      useOSProber = true;
-      #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
-    };
+    efi.canTouchEfiVariables = true;
+    systemd-boot.enable = true;
   };
 
-  networking.hostName = "nixos-test"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -38,7 +33,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.defaultGateway = "192.168.5.201";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
